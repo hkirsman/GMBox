@@ -1,9 +1,9 @@
 /**
- * jQuery fancyGmapPopup
+ * jQuery fancyGmapPopup (name still under consideration)
  *
- * @url		http://gmap.nurtext.de/
- * @author	Cedric Kastner <cedric@nur-text.de>
- * @version	1.1.0
+ * @url		https://github.com/hkirsman/GMBox
+ * @author	Hannes Kirsman <hkirsman@gmail.com>
+ * @version	0.0.1
  */
 /*global window: true, timer: true, document: true, google: true, alert: true, clearTimeout: true, el: true, setInterval: true, jQuery: true */
 
@@ -331,7 +331,7 @@ function set_gmap_api_loaded() {
     google.maps.event.trigger(map, 'resize');
   }
   
-  // A method for fetching the current element ColorBox is referencing.
+  // A method for fetching the current element GMBox is referencing.
 	// returns a jQuery object.
 	publicMethod.element = function () {
 		return $(element);
