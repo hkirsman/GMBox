@@ -12,13 +12,12 @@ window.gmap_api_loaded = false;
 function set_gmap_api_loaded() {
   window.gmap_api_loaded = true;
 }
-  
-(function($) {
 
+(function($) {
   var
-	// fancyGmapPopup Default Settings.	
-	// See http:// for details.
-	defaults = {
+  // fancyGmapPopup Default Settings.	
+  // See http:// for details.
+  defaults = {
     // popup options
     transition:     "elastic",  
 
@@ -54,8 +53,8 @@ function set_gmap_api_loaded() {
   },
 
   // Abstracting the HTML and event identifiers for easy rebranding
-	fancygmappopup = 'fancyGmapPopup',
-	prefix = 'fgmpopup',
+  fancygmappopup = 'fancyGmapPopup',
+  prefix = 'fgmpopup',
 
   // Events	
   event_open = prefix + '_open',
@@ -65,26 +64,26 @@ function set_gmap_api_loaded() {
   event_closed = prefix + '_closed',
   event_purge = prefix + '_purge',
   event_loaded = prefix + '_loaded',
-  
+
   // Special Handling for IE
   isIE = $.browser.msie && !$.support.opacity, // feature detection alone gave a false positive on at least one phone browser and on some development versions of Chrome.
-	isIE6 = isIE && $.browser.version < 7,
-	event_ie6 = prefix + '_IE6',
+  isIE6 = isIE && $.browser.version < 7,
+  event_ie6 = prefix + '_IE6',
 
   // Cached jQuery Object Variables
-	$overlay,
+  $overlay,
 
   // Variables for cached values or use across multiple functions
-	interfaceHeight,
-	interfaceWidth,
-	loadedHeight,
-	loadedWidth,
+  interfaceHeight,
+  interfaceWidth,
+  loadedHeight,
+  loadedWidth,
   geocoder,
   opts,
   map_private, // map instance
   latlng_private, // current latitude, longitude availabe for public functions too
   timer,
-    
+
   publicMethod;
 
   // ****************
@@ -330,12 +329,12 @@ function set_gmap_api_loaded() {
     $("#map_canvas").css("width", "900px");
     google.maps.event.trigger(map, 'resize');
   }
-  
+
   // A method for fetching the current element GMBox is referencing.
-	// returns a jQuery object.
-	publicMethod.element = function () {
-		return $(element);
-	};
+  // returns a jQuery object.
+  publicMethod.element = function () {
+    return $(element);
+  };
 
   publicMethod.settings = defaults;
 
