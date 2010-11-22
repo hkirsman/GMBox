@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="et">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="style/reset.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style/_style.css" media="all" title="" />
+     <link rel="stylesheet" type="text/css" href="style/print.css" media="print" title="" />
+    <title></title>
+  </head>
+  <body>
+
+    <div id="map_canvas" style="width: 600px; height: 300px"></div>
+
+    <a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=kuusalu&sll=59.130863,25.224609&sspn=51.222969,89.560547&ie=UTF8&hq=&hnear=Kuusalu+village,+Harjumaa,+Estonia&z=10" title="47.660937,9.569803" class="gmap">Kuusalu</a><br />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../gmap/jquery.gmap-1.1.0.js"></script>
+    <script type="text/javascript">
+
+      $(".gmap").fancyGmapPopup({
+        zoom:6,
+        mapTypeId: "terrain",
+        onClick: function(e) {
+          var marker = new google.maps.Marker({
+              position: e.latLng, 
+              map: map,
+              draggable: true,
+              bouncy: true
+          });
+          map.setCenter(e.latLng);
+        }
+      });
+        
+    </script>
+  </body>
+</html>
